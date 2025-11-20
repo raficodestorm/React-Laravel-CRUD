@@ -1,0 +1,86 @@
+/* Page wrapper */
+.container {
+    width: 95%;
+    margin: 20px auto;
+    font-family: "Inter", sans-serif;
+  }
+  
+  /* Heading */
+  .title {
+    text-align: center;
+    margin-bottom: 22px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+  }
+  
+  /* Table wrapper for shadow */
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* Table styles */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    background: white;
+  }
+  
+  /* Table Head */
+  .styled-table thead tr {
+    background-color: #ff3b30;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    padding: 14px 20px;
+  }
+  
+  /* Table body rows */
+  .styled-table tbody tr {
+    border-bottom: 1px solid #e6e6e6;
+    transition: 0.2s;
+  }
+  
+  /* Hover effect */
+  .styled-table tbody tr:hover {
+    background: #fff3f2;
+    transform: scale(1.01);
+  }
+  
+  /* Zebra rows */
+  .styled-table tbody tr:nth-of-type(even) {
+    background-color: #fafafa;
+  }
+  
+  /* Last row border remove */
+  .styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #ff3b30;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .title {
+      font-size: 22px;
+    }
+  
+    .styled-table th,
+    .styled-table td {
+      padding: 12px;
+      font-size: 14px;
+    }
+  
+    .table-wrapper {
+      padding: 10px;
+    }
+  }
+  

@@ -1,0 +1,147 @@
+.postlist-page {
+    padding: 2rem;
+    font-family: Inter, system-ui, sans-serif;
+    background: #f8fafc;
+    min-height: 100vh;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+  
+  .title {
+    color: #0f172a;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  
+  /* Add Button */
+  .btn-add {
+    padding: 10px 16px;
+    background: #0284c7;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.2s ease;
+    box-shadow: 0 6px 16px rgba(2, 132, 199, 0.3);
+  }
+  
+  .btn-add:hover {
+    background: #0369a1;
+    transform: translateY(-2px);
+  }
+  
+  /* Posts container */
+  .posts-container {
+    display: grid;
+    gap: 18px;
+  }
+  
+  .no-posts {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+  }
+  
+  /* Post card */
+  .post-card {
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    transition: 0.2s ease-in-out;
+  }
+  
+  .post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 28px rgba(15, 23, 42, 0.08);
+  }
+  
+  .post-title {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  
+  .post-body {
+    color: #475569;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+  
+  /* Actions */
+  .actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  
+  .btn-edit,
+  .btn-delete {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  /* Edit Button */
+  .btn-edit {
+    background: #0ea5e9;
+    color: white;
+  }
+  
+  .btn-edit:hover {
+    background: #0284c7;
+    transform: translateY(-2px);
+  }
+  
+  /* Delete Button */
+  .btn-delete {
+    background: #f43f5e;
+    color: white;
+  }
+  
+  .btn-delete:hover {
+    background: #e11d48;
+    transform: translateY(-2px);
+  }
+  
+  /* Loading */
+  .loading {
+    padding: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #475569;
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 640px) {
+    .post-card {
+      padding: 14px;
+    }
+  
+    .title {
+      font-size: 1.3rem;
+    }
+  
+    .header {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .btn-add {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
