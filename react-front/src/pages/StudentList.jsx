@@ -3,8 +3,8 @@ import api from "../api";
 import { Link } from "react-router-dom";
 import "./PostList.css";
 
-export default function PostList() {
-  const [posts, setPosts] = useState([]);
+export default function StudentList() {
+  const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -13,19 +13,19 @@ export default function PostList() {
 
   const loadPosts = async () => {
     try {
-      const res = await api.get("/posts");
-      setPosts(res.data);
+      const res = await api.get("/students");
+      setStudents(res.data);
     } catch (error) {
-      console.log("Error loading posts:", error);
+      console.log("Error loading lists:", error);
     } finally {
       setLoading(false);
     }
   };
 
-  const deletePost = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this post?")) return;
+  const deleteStudent = async (id) => {
+    if (!window.confirm("Are you sure you want to delete this student?")) return;
 
-    await api.delete(`/posts/${id}`);
+    await api.delete(`/students/${id}`);
     loadPosts();
   };
 
@@ -36,30 +36,31 @@ export default function PostList() {
   return (
     <div className="postlist-page">
       <div className="header">
-        <h2 className="title">All Posts</h2>
-        <Link className="btn-add" to="/addpost">
+        <h2 className="title">All students</h2>
+        <Link className="btn-add" to="/addstudent">
           + Add New
         </Link>
       </div>
 
       <div className="posts-container">
-        {posts.length === 0 && (
-          <p className="no-posts">No posts available. Add a new post.</p>
+        {students.length === 0 && (
+          <p className="no-posts">No students available. Add a new student.</p>
         )}
 
-        {posts.map((p) => (
+        {students.map((p) => (
           <div className="post-card" key={p.id}>
             <div className="post-content">
-              <h3 className="post-title">{p.title}</h3>
-              <p className="post-body">{p.body}</p>
+              <h3 className="post-title">{p.name}</h3>
+              <p className="post-body">{p.roll}</p>
+              <p className="post-body">{p.email}</p>
             </div>
 
             <div className="actions">
-              <Link className="btn-edit" to={`/edit/${p.id}`}>
+              <Link className="btn-edit" to={`/editstudent/${p.id}`}>
                 Edit
               </Link>
 
-              <button className="btn-delete" onClick={() => deletePost(p.id)}>
+              <button className="btn-delete" onClick={() => deleteStudent(p.id)}>
                 Delete
               </button>
             </div>
